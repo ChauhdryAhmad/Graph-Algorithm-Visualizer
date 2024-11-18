@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Algorithm Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="top-bar">
+        <h1>Graph Algorithm Visualizer</h1>
+    </div>
+    <div id="container">
+        <div id="left-panel">
+            <button id="add-node">Add Node</button>
+            <button id="add-edge">Add Edge</button>
+            <button id="delete-node">Delete Node</button>
+            <button id="delete-edge">Delete Edge</button>
+            <button id="clear-canvas">Clear Canvas</button>
+            <select id="algorithm-select">
+                <option value="">Select Algorithm</option>
+                <option value="bfs">Breadth-First Search</option>
+                <option value="dfs">Depth-First Search</option>
+                <option value="dijkstra">Dijkstra's Algorithm</option>
+                <option value="a-star">A* Search</option>
+            </select>
+            <button id="visualize">Visualize</button>
+        </div>
+        <canvas id="graph-canvas"></canvas>
+        <div id="right-panel">
+            <h3>Adjacency Matrix</h3>
+            <div id="matrix-content"></div>
+            <h3>Adjacency List</h3>
+            <div id="list-content"></div>
+        </div>
+    </div>
+
+    <!-- Edge Details Modal -->
+    <div id="edge-modal" class="modal">
+        <div class="modal-content">
+            <h3>Add Edge Details</h3>
+            <label>From Node ID: <input type="number" id="from-node" min="0"></label>
+            <label>To Node ID: <input type="number" id="to-node" min="0"></label>
+            <label>Directed: <input type="checkbox" id="directed"></label>
+            <label>Weighted: <input type="checkbox" id="weighted"></label>
+            <label>Weight: <input type="number" id="weight" min="1" disabled></label>
+            <button id="add-edge-confirm">Add Edge</button>
+            <button id="close-modal">Cancel</button>
+        </div>
+    </div>
+
+    <script src="bfs.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
